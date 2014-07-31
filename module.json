@@ -1,0 +1,4 @@
+{
+	"main" : "AhkProModule.js",
+	"deps": ["database"]
+}

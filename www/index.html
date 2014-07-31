@@ -1,0 +1,80 @@
+<!doctype html>
+<html manifest="/ahkpro/manifest.appcache">
+<html>
+<head>
+<meta charset="utf-8" />
+	<title>AHK Productions</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=10,IE=9,IE=8,IE=edge" />
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<link rel="shortcut icon" sizes="1024x1024" href="/img/hierarchy.png">
+
+	<style>
+		html{min-height:100%;}
+		body{
+			min-height:100%;
+			background-image:url('/img/wallpapers/eclipse.jpg'); 
+			background-size:   cover;   
+			background-attachment: fixed;  
+			background-position: center;
+		}
+	</style>
+
+	<link rel="stylesheet" type="text/css" href="/css/framework_merged.css" />
+	
+	<!-- Core lib -->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/all.js"></script>
+	
+	<!-- Apps -->
+	<script src="/ahkpro/apps/sharedlists/sharedlists.js"></script>	
+	<script src="/ahkpro/apps/whatisthis/whatisthis.js"></script>	
+	<script src="/ahkpro/apps/issuemanagement/issuemanagement.js"></script>	
+	<script src="/ahkpro/apps/tempmonitor/tempmonitor.js"></script>	
+	<script src="/ahkpro/apps/passec/passec.js"></script>
+	<script src="/ahkpro/apps/synologybrowser/synologybrowser.js"></script>
+	<script src="/user/apps/profile.js"></script>
+	<script src="/user/apps/login.js"></script>
+	<script src="/user/apps/register.js"></script>
+
+	<!-- Helper libs -->
+	<script src="/user/loginchecker.js"></script>
+	<script src="/ahkpro/js/desktoploader.js"></script>	
+
+	<!-- Synology -->
+	<link rel="stylesheet" type="text/css" href="/synology/css/main.css" />
+	<script src="/synology/js/synologybrowser.js"></script>
+	
+	<script>
+	$(function() {
+	
+		var apps = [
+						loadModule_SharedLists(),
+						loadModule_WhatIsThis(),
+						loadModule_IssueManagement(),
+						loadModule_Profile(),
+						loadModule_Login(),
+						loadModule_Register(),
+						loadModule_TempMonitor(),
+						loadModule_Passec(),
+						loadModule_SynologyBrowser()
+				   ];
+	
+
+		var loader = new DesktopLoader();
+		loader.init({
+			apps: apps
+		});
+		loader.run();
+		
+	});
+	</script>
+</head>
+<body>
+<div id="content-wrapper">
+	
+</div>
+</body>
+</html>
